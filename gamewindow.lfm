@@ -1,0 +1,66 @@
+object GameManagerForm: TGameManagerForm
+  Left = 279
+  Height = 259
+  Top = 145
+  Width = 568
+  Caption = 'RPG Game Manager'
+  ClientHeight = 259
+  ClientWidth = 568
+  OnShow = FormShow
+  LCLVersion = '2.2.6.0'
+  object StoryList: TListBox
+    Left = 8
+    Height = 192
+    Top = 32
+    Width = 168
+    ItemHeight = 0
+    OnDblClick = StoryListDblClick
+    TabOrder = 0
+    TopIndex = -1
+  end
+  object NewStoryBtn: TButton
+    Left = 8
+    Height = 25
+    Top = 224
+    Width = 168
+    Caption = 'New Chapter'
+    OnClick = NewStoryBtnClick
+    TabOrder = 1
+  end
+  object Label1: TLabel
+    Left = 192
+    Height = 18
+    Top = 32
+    Width = 127
+    Caption = 'Game Variable:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object GameVar: TEdit
+    Left = 328
+    Height = 26
+    Top = 24
+    Width = 80
+    NumbersOnly = True
+    TabOrder = 2
+  end
+  object VarBtn: TButton
+    Left = 416
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Find'
+    OnClick = VarBtnClick
+    TabOrder = 3
+  end
+  object TasksBtn: TButton
+    Left = 192
+    Height = 25
+    Top = 64
+    Width = 104
+    Caption = 'Show Tasks'
+    OnClick = TasksBtnClick
+    TabOrder = 4
+  end
+end

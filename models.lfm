@@ -1,0 +1,254 @@
+object Database: TDatabase
+  OldCreateOrder = False
+  Height = 278
+  HorizontalOffset = 1278
+  VerticalOffset = 197
+  Width = 323
+  object ProjectDB: TDbf
+    DateTimeHandling = dtDateTime
+    FilePath = 'data/'
+    IndexDefs = <    
+      item
+        IndexFile = 'PROJECTID'
+        SortField = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end>
+    OpenMode = omAutoCreate
+    StoreDefs = True
+    TableName = 'projects.dbf'
+    TableLevel = 7
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftAutoInc
+      end    
+      item
+        Name = 'TITLE'
+        DataType = ftString
+        Size = 40
+      end    
+      item
+        Name = 'ADDED'
+        DataType = ftDateTime
+      end    
+      item
+        Name = 'DESC'
+        DataType = ftMemo
+      end>
+    FilterOptions = []
+    Left = 264
+    Top = 16
+  end
+  object ProjectDS: TDataSource
+    DataSet = ProjectDB
+    Left = 264
+    Top = 80
+  end
+  object StoryDB: TDbf
+    FilePath = 'data/'
+    IndexDefs = <    
+      item
+        IndexFile = 'STORYID'
+        SortField = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end    
+      item
+        IndexFile = 'STORYPROJECTID'
+        SortField = 'PROJECTID'
+        Options = []
+      end>
+    OpenMode = omAutoCreate
+    StoreDefs = True
+    TableName = 'story.dbf'
+    TableLevel = 7
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftAutoInc
+      end    
+      item
+        Name = 'PROJECTID'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'CHAPTER'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'NOTES'
+        DataType = ftMemo
+      end>
+    FilterOptions = []
+    Left = 192
+    Top = 16
+  end
+  object StoryDS: TDataSource
+    DataSet = StoryDB
+    Left = 192
+    Top = 80
+  end
+  object VarsDB: TDbf
+    DateTimeHandling = dtDateTime
+    FilePath = 'data/'
+    IndexDefs = <    
+      item
+        IndexFile = 'VARID'
+        SortField = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end    
+      item
+        IndexFile = 'VARPROJID'
+        SortField = 'PROJECTID'
+        Options = []
+      end>
+    OpenMode = omAutoCreate
+    StoreDefs = True
+    TableName = 'variables.dbf'
+    TableLevel = 7
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftAutoInc
+      end    
+      item
+        Name = 'PROJECTID'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'VARIABLEID'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'TITLE'
+        DataType = ftString
+        Size = 40
+      end    
+      item
+        Name = 'CHAPTER'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'DESC'
+        DataType = ftMemo
+      end>
+    FilterOptions = []
+    Left = 128
+    Top = 16
+  end
+  object VarsDS: TDataSource
+    DataSet = VarsDB
+    Left = 128
+    Top = 80
+  end
+  object VarStateDB: TDbf
+    DateTimeHandling = dtDateTime
+    FilePath = 'data/'
+    IndexDefs = <>
+    OpenMode = omAutoCreate
+    StoreDefs = True
+    TableName = 'varstates.dbf'
+    TableLevel = 7
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftAutoInc
+      end    
+      item
+        Name = 'PROJECTID'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'VARIABLEID'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'VARVALUE'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'INFO'
+        DataType = ftString
+        Size = 60
+      end>
+    FilterOptions = []
+    Left = 64
+    Top = 16
+  end
+  object VarStateDS: TDataSource
+    DataSet = VarStateDB
+    Left = 64
+    Top = 80
+  end
+  object TasksDB: TDbf
+    DateTimeHandling = dtDateTime
+    FilePath = 'data/'
+    IndexDefs = <    
+      item
+        IndexFile = 'TASKID'
+        SortField = 'ID'
+        Options = [ixPrimary, ixUnique]
+      end    
+      item
+        IndexFile = 'TASKPROJID'
+        SortField = 'PROJECTID'
+        Options = []
+      end    
+      item
+        IndexFile = 'TASKCHAPID'
+        SortField = 'CHAPTER'
+        Options = []
+      end    
+      item
+        IndexFile = 'TASKSTATE'
+        SortField = 'STATE'
+        Options = []
+      end>
+    OpenMode = omAutoCreate
+    StoreDefs = True
+    TableName = 'tasks.dbf'
+    TableLevel = 7
+    FieldDefs = <    
+      item
+        Name = 'ID'
+        DataType = ftAutoInc
+      end    
+      item
+        Name = 'ProjectID'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'Title'
+        DataType = ftString
+        Size = 40
+      end    
+      item
+        Name = 'Chapter'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'Added'
+        DataType = ftDateTime
+      end    
+      item
+        Name = 'Tag'
+        DataType = ftString
+        Size = 20
+      end    
+      item
+        Name = 'State'
+        DataType = ftInteger
+      end    
+      item
+        Name = 'Notes'
+        DataType = ftMemo
+      end>
+    FilterOptions = []
+    Left = 64
+    Top = 144
+  end
+  object TasksDS: TDataSource
+    DataSet = TasksDB
+    Left = 64
+    Top = 208
+  end
+end

@@ -1,0 +1,67 @@
+object NewGameForm: TNewGameForm
+  Left = 352
+  Height = 279
+  Top = 251
+  Width = 418
+  Caption = 'New RPG Game'
+  ClientHeight = 279
+  ClientWidth = 418
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 21
+    Height = 18
+    Top = 18
+    Width = 43
+    Caption = 'Title:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 21
+    Height = 18
+    Top = 48
+    Width = 101
+    Caption = 'Description:'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBEdit1: TDBEdit
+    Left = 72
+    Height = 26
+    Top = 15
+    Width = 328
+    DataField = 'TITLE'
+    DataSource = Database.ProjectDS
+    MaxLength = 0
+    TabOrder = 0
+  end
+  object DBMemo1: TDBMemo
+    Left = 21
+    Height = 168
+    Top = 72
+    Width = 382
+    DataField = 'DESC'
+    DataSource = Database.ProjectDS
+    TabOrder = 1
+  end
+  object SaveBtn: TButton
+    Left = 40
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'Create'
+    ModalResult = 1
+    TabOrder = 2
+  end
+  object CancelBtn: TButton
+    Left = 264
+    Height = 25
+    Top = 248
+    Width = 75
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 3
+  end
+end

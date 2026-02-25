@@ -1,0 +1,30 @@
+object ProjectForm: TProjectForm
+  Left = 287
+  Height = 256
+  Top = 145
+  Width = 320
+  Caption = 'Select Project...'
+  ClientHeight = 256
+  ClientWidth = 320
+  OnShow = FormShow
+  LCLVersion = '2.2.6.0'
+  object ProjectList: TListBox
+    Left = 48
+    Height = 184
+    Top = 24
+    Width = 224
+    ItemHeight = 0
+    OnDblClick = ProjectListDblClick
+    TabOrder = 0
+    TopIndex = -1
+  end
+  object NewBtn: TButton
+    Left = 48
+    Height = 32
+    Top = 216
+    Width = 224
+    Caption = 'New RPG Game'
+    OnClick = NewBtnClick
+    TabOrder = 1
+  end
+end
